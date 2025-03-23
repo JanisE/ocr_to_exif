@@ -1,0 +1,7 @@
+{
+    "require": {
+        "fileeye/pel": "^0.10.0",
+        "thiagoalessio/tesseract_ocr": "^2.13",
+        "ext-pcntl": "*"
+    }
+}

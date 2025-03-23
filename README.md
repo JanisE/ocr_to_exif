@@ -17,7 +17,7 @@ A command line script that recognizes text from JPG files and stores it in the i
 ## Configuration
 
 In [ocr_to_exif.php](ocr_to_exif.php):
-* see constants `OUTPUT_OLD_OCRS` and `UPON_EXISTING_OCRS`;
+* see constants `OUTPUT_OLD_OCRS`, `PROCESS_SUBDIRECTORIES`, `UPON_EXISTING_OCRS`;
 * see line with `new TesseractOCR` for language options.
 
 ## Usage

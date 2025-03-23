@@ -122,7 +122,14 @@ function processJpgFiles($directory)
 	}
 
 	try {
-		$iterator = new DirectoryIterator($directory);
+		if(PROCESS_SUBDIRECTORIES){
+			$iterator = new RecursiveIteratorIterator(
+				new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS)
+			);
+		}
+		else{
+			$iterator = new DirectoryIterator($directory);
+		}
 
 		$startTime = time();
 		$stats = [
@@ -168,6 +175,8 @@ require 'vendor/autoload.php';
 
 const OUTPUT_OLD_OCRS = false;
 const UPON_EXISTING_OCRS = 'SKIP'; // SKIP or UPDATE
+const PROCESS_SUBDIRECTORIES = true;
+
 
 if ($argc < 2) {
 	echo "Usage: php ocr_to_exif.php <directory>\n";
